@@ -53,7 +53,8 @@ class FoodBloc extends Bloc<FoodEvent, FoodState> {
       emit(FoodState.error(foods: state.foods, error: e));
 
       /// Если неизвестная ошибка - делаем переброс до зоны или обозревателя
-      if (e is FoodUnknownException) rethrow;
+      //if (e is FoodUnknownException) rethrow;
+      if (e is FoodUnknownException) addError(e);
     }
   }
 }
