@@ -47,14 +47,12 @@ class FoodBloc extends Bloc<FoodEvent, FoodState> {
       final res = await delegate();
 
       return res;
-
-      /// Отлавливаем только ожидаемые ошибки
-    } on FoodException catch (e) {
+    } on Exception catch (e) {
       emit(FoodState.error(foods: state.foods, error: e));
 
       /// Если неизвестная ошибка - делаем переброс до зоны или обозревателя
       //if (e is FoodUnknownException) rethrow;
-      if (e is FoodUnknownException) addError(e);
+      if (e is FoodUnknownException || e is! FoodException) addError(e);
     }
   }
 }

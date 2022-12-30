@@ -6,7 +6,7 @@ import 'package:non_functional_variant/src/domain/bloc/food_bloc/food_bloc.dart'
 import 'package:non_functional_variant/src/domain/entity/food.dart';
 import 'package:non_functional_variant/src/domain/repository/food_repository.dart';
 import 'package:non_functional_variant/src/util/bloc_observer.dart';
-import 'package:non_functional_variant/src/util/food_exception_x.dart';
+import 'package:non_functional_variant/src/util/food_exception_mapper.dart';
 import 'package:non_functional_variant/src/util/logger.dart';
 
 void main() {

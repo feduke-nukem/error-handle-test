@@ -322,21 +322,21 @@ mixin _$FoodState {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Food> foods) loading,
     required TResult Function(List<Food> foods) loaded,
-    required TResult Function(List<Food> foods, FoodException error) error,
+    required TResult Function(List<Food> foods, Exception error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<Food> foods)? loading,
     TResult? Function(List<Food> foods)? loaded,
-    TResult? Function(List<Food> foods, FoodException error)? error,
+    TResult? Function(List<Food> foods, Exception error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Food> foods)? loading,
     TResult Function(List<Food> foods)? loaded,
-    TResult Function(List<Food> foods, FoodException error)? error,
+    TResult Function(List<Food> foods, Exception error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -472,7 +472,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Food> foods) loading,
     required TResult Function(List<Food> foods) loaded,
-    required TResult Function(List<Food> foods, FoodException error) error,
+    required TResult Function(List<Food> foods, Exception error) error,
   }) {
     return loading(foods);
   }
@@ -482,7 +482,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<Food> foods)? loading,
     TResult? Function(List<Food> foods)? loaded,
-    TResult? Function(List<Food> foods, FoodException error)? error,
+    TResult? Function(List<Food> foods, Exception error)? error,
   }) {
     return loading?.call(foods);
   }
@@ -492,7 +492,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Food> foods)? loading,
     TResult Function(List<Food> foods)? loaded,
-    TResult Function(List<Food> foods, FoodException error)? error,
+    TResult Function(List<Food> foods, Exception error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -617,7 +617,7 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Food> foods) loading,
     required TResult Function(List<Food> foods) loaded,
-    required TResult Function(List<Food> foods, FoodException error) error,
+    required TResult Function(List<Food> foods, Exception error) error,
   }) {
     return loaded(foods);
   }
@@ -627,7 +627,7 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<Food> foods)? loading,
     TResult? Function(List<Food> foods)? loaded,
-    TResult? Function(List<Food> foods, FoodException error)? error,
+    TResult? Function(List<Food> foods, Exception error)? error,
   }) {
     return loaded?.call(foods);
   }
@@ -637,7 +637,7 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Food> foods)? loading,
     TResult Function(List<Food> foods)? loaded,
-    TResult Function(List<Food> foods, FoodException error)? error,
+    TResult Function(List<Food> foods, Exception error)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -698,7 +698,7 @@ abstract class _$$_ErrorCopyWith<$Res> implements $FoodStateCopyWith<$Res> {
       __$$_ErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Food> foods, FoodException error});
+  $Res call({List<Food> foods, Exception error});
 }
 
 /// @nodoc
@@ -722,7 +722,7 @@ class __$$_ErrorCopyWithImpl<$Res>
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as FoodException,
+              as Exception,
     ));
   }
 }
@@ -742,7 +742,7 @@ class _$_Error implements _Error {
   }
 
   @override
-  final FoodException error;
+  final Exception error;
 
   @override
   String toString() {
@@ -773,7 +773,7 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Food> foods) loading,
     required TResult Function(List<Food> foods) loaded,
-    required TResult Function(List<Food> foods, FoodException error) error,
+    required TResult Function(List<Food> foods, Exception error) error,
   }) {
     return error(foods, this.error);
   }
@@ -783,7 +783,7 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<Food> foods)? loading,
     TResult? Function(List<Food> foods)? loaded,
-    TResult? Function(List<Food> foods, FoodException error)? error,
+    TResult? Function(List<Food> foods, Exception error)? error,
   }) {
     return error?.call(foods, this.error);
   }
@@ -793,7 +793,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Food> foods)? loading,
     TResult Function(List<Food> foods)? loaded,
-    TResult Function(List<Food> foods, FoodException error)? error,
+    TResult Function(List<Food> foods, Exception error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -839,11 +839,11 @@ class _$_Error implements _Error {
 
 abstract class _Error implements FoodState {
   const factory _Error(
-      {final List<Food> foods, required final FoodException error}) = _$_Error;
+      {final List<Food> foods, required final Exception error}) = _$_Error;
 
   @override
   List<Food> get foods;
-  FoodException get error;
+  Exception get error;
   @override
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>

@@ -12,6 +12,6 @@ class FoodState with _$FoodState {
 
   const factory FoodState.error({
     @Default([]) List<Food> foods,
-    required FoodException error,
+    required Exception error,
   }) = _Error;
 }
