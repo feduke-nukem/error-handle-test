@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -11,12 +12,14 @@ import 'package:non_functional_variant/src/util/logger.dart';
 
 void main() {
   Bloc.observer = DummyBlocObserver();
-  runZonedGuarded(() {
-    runApp(const MyApp());
-  }, (error, stack) {
-    /// Логаем либо в зоне
+
+  PlatformDispatcher.instance.onError = (error, stack) {
     DummyLogger.instance.e(error.toString(), error, stack);
-  });
+
+    return true;
+  };
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
